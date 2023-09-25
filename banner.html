@@ -7,142 +7,18 @@
     <title>Document</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700&display=swap" rel="stylesheet">
     <style>
-        /* .banner_checkerAI {
-            display: flex;
-            justify-content: space-evenly;
-            align-items: center;
-            gap: 19px;
-            box-sizing: border-box;
-        }
-
-        .banner_checkerAI.dark {
-            background-color: #000616;
-            background-image: url(./img/dark_bg.png);
-            background-size: contain;
-            background-position: center bottom;
-            background-repeat: no-repeat;
-            padding: 44px 133px 55px 147px;
-        }
-
-        .banner_checkerAI.light {
-            background-color: #D0E0FF;
-            background-image: url(./img/light_bg.png);
-            background-size: contain;
-            background-position: left bottom;
-            background-repeat: no-repeat;
-            background-blend-mode: screen;
-            padding: 70px 138px 55px 205px;
-        }
-
-        .logoAI {
-            max-width: 366px;
-            align-self: self-start;
-        }
-
-        .btn {
-            display: flex;
-            min-width: 250px;
-            padding: 20px 55px;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-            border-radius: 55px;
-            color: #000;
-            font-family: Inter;
-            font-size: 20px;
-            font-weight: 500;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            border: 0px;
-            box-sizing: border-box;
-            cursor: pointer;
-            transition: all 600ms linear;
-        }
-
-        .banner_checkerAI.dark .btn {
-            font-weight: 700;
-        }
-
-        .banner_checkerAI.dark .btn.main-btn {
-            margin-left: auto;
-            background-image: linear-gradient(88deg, #1B6AA1 1.7%, #8FE4F6 99.38%);
-            background-position: center;
-            box-shadow: 0px 0px 0px 0px #66B9D7 inset;
-        }
-
-        .banner_checkerAI.dark .btn.sec-btn {
-            border: 1px solid #66B9D7;
-            color: #81D5EB;
-            background: transparent;
-        }
-
-        .banner_checkerAI.light .btn.main-btn {
-            margin-left: auto;
-            background-image: linear-gradient(92deg, #7EE0FF 25.28%, #1FA5FF 104.91%);
-            box-shadow: 0px 0px 10px 0px #ADC8FF;
-            background-position: center;
-            box-shadow: 0px 0px 0px 0px #1FA5FF inset;
-        }
-
-        .banner_checkerAI.light .btn.sec-btn {
-            background: rgba(255, 255, 255, 0.25);
-            box-shadow: 0px 0px 10px 0px #ADC8FF;
-            background: transparent;
-        }
-
-        .banner_checkerAI .btn.main-btn:hover {
-            box-shadow: 0px 0px 1px 300px #1FA5FF inset;
-        }
-
-        .banner_checkerAI .btn.sec-btn:hover {
-            box-shadow: 0px 0px 10px 0px #ADC8FF, 0px 0px 1px 3px #66B9D7 inset;
-        }
-
-        @media screen and (max-width:1400px) {
-
-            .banner_checkerAI.dark,
-            .banner_checkerAI.light {
-                padding: 44px;
-            }
-
-            .btn {
-                font-size: 16px;
-                padding: 15px 35px;
-                min-width: 200px;
-            }
-        }
-
-        @media screen and (max-width:1000px) {
-
-            .banner_checkerAI.dark,
-            .banner_checkerAI.light {
-                padding: 14px 30px;
-                gap: 10px;
-            }
-
-            .btn {
-                min-width: unset;
-                font-size: 7px;
-                padding: 10px 20px;
-                word-break: keep-all;
-                white-space: nowrap;
-            }
-
-            .logoAI {
-                max-width: 40vw;
-                margin: 0 auto;
-            }
-        } */
-
         .banner_checkerAI {
             display: flex;
             justify-content: space-around;
             align-items: center;
             gap: 19px;
             box-sizing: border-box;
-            padding: 44px 13px 55px 13px;
+            padding: 44px;
         }
 
         .banner_checkerAI.dark {
@@ -186,6 +62,7 @@
             box-sizing: border-box;
             cursor: pointer;
             transition: all 600ms linear;
+            position: relative;
         }
 
         .banner_checkerAI.dark .btn {
@@ -234,11 +111,50 @@
             align-items: center;
         }
 
+        .tooltip {
+            position: absolute;
+            background-color: #1FA5FF;
+            color: #fff;
+            padding: 5px;
+            border-radius: 3px;
+            font-size: 12px;
+            z-index: 100000;
+        }
+
+        .tooltip-ai {
+            position: absolute;
+            opacity: 0;
+            background: #1FA5FF;
+            color: white;
+            font-weight: normal;
+            font-family: 'Roboto', sans-serif;
+            padding: 8px 16px;
+            font-size: 12px;
+            border-radius: 5px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.3);
+            -webkit-box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.3);
+            -moz-box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.3);
+            z-index: 10001;
+        }
+
+        .tooltip-ai:after {
+            content: '';
+            border-top: 8px solid #1FA5FF;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-bottom: 8px solid transparent;
+            position: absolute;
+            bottom: -15px;
+            left: 10px;
+        }
+
+
         @media screen and (max-width:1600px) {
 
             .banner_checkerAI.dark,
             .banner_checkerAI.light {
-                padding: 44px;
+                padding: 44px 13px 55px 13px;
             }
 
             .banner_checkerAI .btn {
@@ -276,8 +192,11 @@
     <main class="banner_checkerAI dark">
         <img src="./img/checkerAI_logo_wh.svg" alt="" class="logoAI">
         <div class="group-btn">
-            <button class="btn main-btn">Started</button>
-            <button class="btn sec-btn">Learn More</button>
+            <button class="btn main-btn pop_tooltip" data-style="tooltip-ai"
+                data-tip="Click here for start">Started</button>
+            <button class="btn sec-btn pop_tooltip" data-style="tooltip-ai"
+                data-tip="Click here for learning more">Learn
+                More</button>
         </div>
     </main>
     <br>
@@ -285,11 +204,39 @@
     <main class="banner_checkerAI light">
         <img src="./img/checkerAI_logo.svg" alt="" class="logoAI">
         <div class="group-btn">
-            <button class="btn main-btn">Started</button>
-            <button class="btn sec-btn">Learn More</button>
+            <button class="btn main-btn pop_tooltip" data-style="tooltip-ai"
+                data-tip="Click here for start">Started</button>
+            <button class="btn sec-btn pop_tooltip" data-style="tooltip-ai"
+                data-tip="Click here for learning more">Learn
+                More</button>
         </div>
 
     </main>
+    <script>
+        $(document).ready(function () {
+            $('.pop_tooltip')
+                .on('mouseover', function () {
+                    tooltip = $(this);
+                    tooltip_text = tooltip.attr('data-tip');
+                    tooltip_style = tooltip.attr('data-style');
+                    tooltip_class = '.' + tooltip_style;
+
+                    tooltip.addClass('showed-tooltip');
+                    $('body').after('<span class="' + tooltip_style + '">' + tooltip_text + '</span>');
+                    position_top = tooltip.offset().top - $(tooltip_class).outerHeight() - 10;
+                    position_left = tooltip.offset().left;
+
+                    $(tooltip_class)
+                        .css({ left: position_left, top: position_top })
+                        .animate({ opacity: '0.8' }, 200);
+                })
+                .on('mouseout', function () {
+                    $(tooltip_class).animate({ opacity: '0', 'margin-left': '0px' }, 200, function () {
+                        $(this).remove();
+                        tooltip.removeClass('showed-tooltip');
+                    });
+                });
+        });</script>
 </body>
 
 </html>
