@@ -124,29 +124,19 @@
         .tooltip-ai {
             position: absolute;
             opacity: 0;
-            background: #1FA5FF;
-            color: white;
+            background: #fff;
+            color: #000;
             font-weight: normal;
             font-family: 'Roboto', sans-serif;
             padding: 8px 16px;
-            font-size: 12px;
+            font-size: 13px;
             border-radius: 5px;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            max-width: 250px;
+            /* text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); */
             box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.3);
             -webkit-box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.3);
             -moz-box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.3);
             z-index: 10001;
-        }
-
-        .tooltip-ai:after {
-            content: '';
-            border-top: 8px solid #1FA5FF;
-            border-left: 8px solid transparent;
-            border-right: 8px solid transparent;
-            border-bottom: 8px solid transparent;
-            position: absolute;
-            bottom: -15px;
-            left: 10px;
         }
 
 
@@ -207,7 +197,7 @@
             <button class="btn main-btn pop_tooltip" data-style="tooltip-ai"
                 data-tip="Click here for start">Started</button>
             <button class="btn sec-btn pop_tooltip" data-style="tooltip-ai"
-                data-tip="Click here for learning more">Learn
+                data-tip="<b>test</b><br>Click here for learning more Click here for learning more Click here for learning more Click here for learning more Click here for learning more Click here for learning more Click here for learning more Click here for learning more Click here for learning more Click here for learning more Click here for learning more Click here for learning more">Learn
                 More</button>
         </div>
 
@@ -223,9 +213,8 @@
 
                     tooltip.addClass('showed-tooltip');
                     $('body').after('<span class="' + tooltip_style + '">' + tooltip_text + '</span>');
-                    position_top = tooltip.offset().top - $(tooltip_class).outerHeight() - 10;
-                    position_left = tooltip.offset().left;
-
+                    position_top = tooltip.offset().top + $(this).outerHeight() + 5;
+                    position_left = $(this).offset().left + ($(this).outerWidth() / 2) - ($(tooltip_class).outerWidth() / 2);
                     $(tooltip_class)
                         .css({ left: position_left, top: position_top })
                         .animate({ opacity: '0.8' }, 200);
