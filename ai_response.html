@@ -1,0 +1,1797 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://eu.checker-soft.com/testing/css/master.css" type="text/css" />
+
+    <link rel="stylesheet" type="text/css"
+        href="https://eu.checker-soft.com/testing/libraries/jquery/blueimp-jQuery-File-Upload-ea0c62d/jquery.fileupload-ui.css?ver14">
+    <link rel="stylesheet" type="text/css"
+        href="https://eu.checker-soft.com/testing/libraries/jquery/star-rating/jquery.rating.css?ver14">
+    <link rel="stylesheet" type="text/css"
+        href="https://eu.checker-soft.com/testing/libraries/jquery/lists-multiselect/css/ui.multiselect.css?ver14" />
+    <link rel="stylesheet" type="text/css"
+        href="https://eu.checker-soft.com/testing/libraries/jquery/multi-checkboxes-select-v2/jquery.multiselect.css?ver14" />
+    <link rel="stylesheet" type="text/css"
+        href="https://eu.checker-soft.com/testing/libraries/jquery/multi-checkboxes-select-v2/jquery.multiselect.filter.css?ver14" />
+    <link rel='icon' href='favicon.ico' type='image/x-icon' />
+    <link rel="stylesheet" href="https://eu.checker-soft.com/testing/checker-files/media/68/css/checker-blue.css"
+        type="text/css" />
+    <link type='text/css' rel='stylesheet' href='WebResource.css' />
+    <link href='style.css' type='text/css' rel='stylesheet' />
+
+    <link href="https://eu.checker-soft.com/testing/libraries/jquery/custom-theme/jquery-ui.custom.css" type="text/css"
+        rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" media="screen"
+        href="https://eu.checker-soft.com/testing/libraries/jquery.new/css/ui-lightness/jquery-ui-1.8.4.custom.css" />
+    <link rel="stylesheet" type="text/css" media="screen"
+        href="https://eu.checker-soft.com/testing/libraries/jquery.new/jqGrid-3.8/css/ui.jqgrid.css" />
+    <style>
+        h1 {
+            text-align: center;
+            color: #666;
+        }
+
+        .accordion-ai-response {
+            width: 900px;
+            overflow: hidden;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+            box-shadow: 0 5px 10px rgb(0 0 0 / 10%);
+            margin: 20px auto;
+        }
+
+        .accordion-ai-response div:not(:last-child) {
+            border-bottom: 1px solid #ccc;
+        }
+
+        .accordion-ai-response>div button {
+            border: none;
+            outline: none;
+            text-align: left;
+            display: flex;
+            justify-content: space-between;
+            transition: 100ms ease;
+            width: 100%;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            height: 44px;
+            background-color: #E4F7FE;
+            color: #2c4482;
+        }
+
+        .accordion-ai-response>div button i {
+            transition: 200ms ease;
+        }
+
+        .accordion-ai-response>div {
+            overflow: hidden;
+            transition: 300ms ease;
+        }
+
+        .accordion-ai-response>div p {
+            margin: 10px;
+            font-size: 16px;
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body class="page-show-entire-crit">
+    <div id='container'>
+        <table id='width_limiter' width='100%' cellpadding=0 cellspacing=0>
+            <tr>
+                <td width="" 0%"">&nbsp;</td>
+                <td id="the_cell_with_the_program" width="100%" valign="top" class='mainCellBackground'>
+                    <table id=top_title_graphics width='100%' cellpadding=0 cellspacing=0 class='header-top-bg'>
+                        <tr>
+                            <TD class='first-aligment'><img src='checker-files/company-images/68-Logo-320.png'></td>
+                            <td class='second-alignment' valign=bottom width=460>
+                                <div class='second-alignment'>
+                                    <img src='images/main_image_default.jpg'>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class='secondRowStyle' colspan=3>&nbsp;</td>
+                        </tr>
+                    </table>
+                    <table id='menu_top_level_wrapper' class='menu_top_level_wrapper' width=100% height=26 cellspacing=0
+                        cellpadding=0>
+                        <TR class='menu-bg'>
+                            <td width='100%'>
+                                <table id='menu_top_level' class='menu_top_level' height=26 cellspacing=0 cellpadding=0>
+                                    <tr>
+                                        <td align=center class='top_menu'
+                                            onClick='location.href="https://eu.checker-soft.com/testing/main-menu.php"; return false;'>
+                                            <a href='main-menu.php'>Main menu</a>
+                                        </td>
+                                        <td><img src='images/spacer.gif' class='menu-seperator'></td>
+                                        <td align=center class='top_menu'
+                                            onClick='location.href="https://eu.checker-soft.com/testing/menu-manage.php"; return false;'>
+                                            <a href='menu-manage.php'>Management</a>
+                                        </td>
+                                        <td><img src='images/spacer.gif' class='menu-seperator'></td>
+                                        <td align=center class='top_menu'
+                                            onClick='location.href="https://eu.checker-soft.com/testing/menu-questions.php"; return false;'>
+                                            <a href='menu-questions.php'>Questionnaires</a>
+                                        </td>
+                                        <td><img src='images/spacer.gif' class='menu-seperator'></td>
+                                        <td align=center class='top_menu'
+                                            onClick='location.href="https://eu.checker-soft.com/testing/menu-training.php"; return false;'>
+                                            <a href='menu-training.php'>CheckerTificate</a>
+                                        </td>
+                                        <td><img src='images/spacer.gif' class='menu-seperator'></td>
+                                        <td align=center class='top_menu'
+                                            onClick='location.href="https://eu.checker-soft.com/testing/menu-operation.php"; return false;'>
+                                            <a href='menu-operation.php'>Operation</a>
+                                        </td>
+                                        <td><img src='images/spacer.gif' class='menu-seperator'></td>
+                                        <td align=center class='top_menu top_menu-selected'
+                                            onClick='location.href="https://eu.checker-soft.com/testing/menu-reports.php"; return false;'>
+                                            <a href='menu-reports.php'>Reports</a>
+                                        </td>
+                                        <td><img src='images/spacer.gif' class='menu-seperator'></td>
+                                        <td align=center class='top_menu'
+                                            onClick='location.href="https://eu.checker-soft.com/testing/menu-import.php"; return false;'>
+                                            <a href='menu-import.php'>Import</a>
+                                        </td>
+                                        <td><img src='images/spacer.gif' class='menu-seperator'></td>
+                                        <td align=center class='top_menu'
+                                            onClick='location.href="https://eu.checker-soft.com/testing/support-tickets.php"; return false;'>
+                                            <a href='support-tickets.php'>Support tickets</a>
+                                        </td>
+                                        <td><img src='images/spacer.gif' class='menu-seperator'></td>
+                                        <td align=center class='top_menu'
+                                            onClick='location.href="https://eu.checker-soft.com/testing/show-updates.php"; return false;'>
+                                            <a href='show-updates.php'>Checker updates</a>
+                                        </td>
+                                        <td><img src='images/spacer.gif' class='menu-seperator'></td>
+                                        <td align=center class='top_menu'
+                                            onClick='location.href="https://eu.checker-soft.com/testing/user-guide.php"; return false;'>
+                                            <a href='user-guide.php'>User guides</a>
+                                        </td>
+                                        <td><img src='images/spacer.gif' class='menu-seperator'></td>
+                                        <td align=center class='top_menu'
+                                            onClick='location.href="https://eu.checker-soft.com/testing/menu-settings.php"; return false;'>
+                                            <a href='menu-settings.php'>Settings</a>
+                                        </td>
+                                        <td><img src='images/spacer.gif' class='menu-seperator'></td>
+                                        <td align=center class='top_menu'
+                                            onClick='location.href="https://eu.checker-soft.com/testing/logoff.php"; return false;'>
+                                            <a href='logoff.php'>Log
+                                                off</a>
+                                        </td>
+                                        <td><img src='images/spacer.gif' class='menu-seperator'></td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                    <div class='gray-darker'>&nbsp;
+                    </div>
+                    <div class='gray-lighter1'>&nbsp;</div>
+                    <table id="logo_and_title" width='100%' class='logo-bg' cellpadding=5>
+                        <tr>
+                            <td><span class=pageTitle>&nbsp;&nbsp;Full review report: A Govt. Hospital -
+                                    AIIMS&nbsp;&nbsp;&nbsp;</span><span class='breadcrums'>(<a
+                                        href='menu-reports.php'>Reports</a> &gt; Show entire review)</span></TD>
+                            <td></td>
+                            <td>
+                                <form name='SearchForm' action='search-page.php' method='get'> <input
+                                        class="searchClass" value='' maxlength='50' size='13' name='searchBox' />
+                                    <input type='hidden' value='' name='searchBoxHidden' /><input type="hidden"
+                                        name="search_submitted" value="1" /><input type='submit' value='Search'>
+                                </form>
+                            </td>
+                            <td>
+                                <script>
+                                    function call_set_lang_page(strURL) {
+                                        $.ajax({
+                                            url: strURL,
+                                            success: function (response, textStatus) {
+                                                if ('success' === textStatus) {
+                                                    location.reload();
+                                                } else {
+                                                    console.log('Failed on setting lang');
+                                                }
+                                            }
+                                        });
+                                    }
+
+                                    $(function () {
+                                        $("#set-language").button().click(function () {
+                                            let button = $("#set-language");
+                                            let button_position = button.offset();
+                                            let window_width = 350;
+                                            let position = [button_position.left - $(window).scrollLeft() - window_width, button_position.top - $(window).scrollTop() + 40];
+                                            $("#language-dialog-form").dialog({
+                                                height: 300,
+                                                width: window_width,
+                                                position: position,
+                                                modal: true,
+                                                buttons: {
+                                                    "Ok": function () {
+                                                        //document.forms["SetLang"].submit();
+                                                        var form_id = retrive_selected_value("lang_entity_id");
+                                                        var form_lang_id = retrive_selected_value("user_lang_id");
+                                                        var form_entity_type = retrive_selected_value("entity_type_w");
+                                                        call_set_lang_page("save-lang.php?w=" + form_entity_type + "&lang_id=" + form_lang_id + "&id=" + form_id);
+                                                        $(this).dialog("close");
+                                                    },
+                                                    Cancel: function () {
+                                                        $(this).dialog("close");
+                                                    }
+                                                },
+                                                show: {
+                                                    effect: "puff",
+                                                    duration: 500
+                                                },
+                                                hide: {
+                                                    effect: "puff",
+                                                    duration: 500
+                                                }
+                                            });
+                                            return false;
+                                        });
+                                    });
+                                </script>
+
+                                <div id="language-dialog-form" title="Select language" style="display: none;">
+                                    <p class="validateTips">Please select language and click OK.</p>
+
+                                    <form name='SetLang' action='save-lang.php' method='get'>
+                                        <fieldset>
+                                            <label for="Language">Language</label>
+                                            <table border="0" cellpadding="0">
+                                                <tr>
+                                                    <td><span dir='ltr'><select name="user_lang_id" id="user_lang_id"
+                                                                class="list-select"
+                                                                data-validation-engine="funcCall[checkAjaxCombo]">
+                                                                <option value="0">Default</option>
+                                                                <option value="26">Arabic (Egypt)</option>
+                                                                <option value="38">Arabic (Saudi Arabia)</option>
+                                                                <option value="31">Arabic (UAE)</option>
+                                                                <option value="29">Bosnian</option>
+                                                                <option value="17">Bulgarian</option>
+                                                                <option value="23">Croatian</option>
+                                                                <option value="28">Czech</option>
+                                                                <option value="50">Danish</option>
+                                                                <option value="5">German</option>
+                                                                <option value="53">[-1]de_CH</option>
+                                                                <option value="33">Dutch</option>
+                                                                <option value="4">English Australia</option>
+                                                                <option value="3">English UK</option>
+                                                                <option value="1" selected>English US</option>
+                                                                <option value="10">English v2</option>
+                                                                <option value="44">English (Retail surveys)</option>
+                                                                <option value="43">English (Surveys)</option>
+                                                                <option value="37">Spanish (Catalan)</option>
+                                                                <option value="6">Spanish - Spain</option>
+                                                                <option value="19">Spanish- South America</option>
+                                                                <option value="14">Estonian</option>
+                                                                <option value="39">Dutch (Flemish)</option>
+                                                                <option value="9">French</option>
+                                                                <option value="18">French (Belgium)</option>
+                                                                <option value="16">Hungarian</option>
+                                                                <option value="25">Japanese</option>
+                                                                <option value="2">Hebrew</option>
+                                                                <option value="40">Hebrew (reviews)</option>
+                                                                <option value="30">Hebrew (surveys)</option>
+                                                                <option value="49">Hebrew evaluations</option>
+                                                                <option value="41">Italian</option>
+                                                                <option value="11">Lithuanian</option>
+                                                                <option value="27">Macedonian</option>
+                                                                <option value="22">Polish</option>
+                                                                <option value="7">Portuguese (Brazil)</option>
+                                                                <option value="42">Portuguese (Portugal)</option>
+                                                                <option value="15">Romanian</option>
+                                                                <option value="32">Serbian</option>
+                                                                <option value="24">Slovak</option>
+                                                                <option value="34">Slovene</option>
+                                                                <option value="36">Thai</option>
+                                                                <option value="12">Turkish</option>
+                                                                <option value="8">Russian</option>
+                                                                <option value="20">Russian v2</option>
+                                                                <option value="21">Ukrainian</option>
+                                                                <option value="13">Chinese</option>
+                                                                <option value="35">Chinese - Mandarin</option>
+                                                                <option value="45">Georgian</option>
+                                                                <option value="46">Norwegian</option>
+                                                                <option value="48">Latvian</option>
+                                                                <option value="51">Vietnamese</option>
+                                                                <option value="52">Greek</option>
+                                                                <option value="54">Finnish</option>
+                                                            </select></span></td>
+                                                </tr>
+                                            </table><input type=hidden id="entity_type_w" name="entity_type_w"
+                                                value="c64"><input type=hidden id="lang_entity_id" name="lang_entity_id"
+                                                value="11859">
+                                        </fieldset>
+                                    </form>
+                                </div>
+
+                                <a href="https://eu.checker-soft.com/testing/#" id="set-language">Language</a>
+                                &nbsp;<a class="linkClass" id="hlp_lnk" onclick="load_help_to_div('');"
+                                    href="https://eu.checker-soft.com/testing/javascript:void(0);">?</a><span
+                                    id="chk-hlp-div" class="chk-hlp-div"></span>
+                            </td>
+                        </TR>
+                    </TABLE>
+                    <table id=side_menu class=side_menu width='100%' cellspacing=0 cellpadding=0>
+                        <tr>
+                            <td valign=top class='middle-right'><!-- End of header -->
+
+                                <head>
+                                    <style>
+                                        .filtershidden {
+                                            display: none
+                                        }
+
+                                        .filtersshown {
+                                            display: inline
+                                        }
+                                    </style>
+
+                                    <script type="text/Javascript">
+
+			function hideFilterArea(){
+							}
+
+			function showFilterArea(){
+				$("#FiltersArea").show();
+				$("#FiltersAreaLink").hide();
+			}
+
+		</script>
+
+                                </head>
+
+                                <body>
+                                    <div class='filtersshown' id='FiltersArea'>
+                                        <table cellpadding="2">
+                                            <tr>
+                                            <tr>
+                                                <td><a href=show-entire-crit-v5.php?CritID=268904 target=_BLANK>Show in
+                                                        review report version</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href=show-entire-crit-by-qcode.php?CritID=268904
+                                                        target=_BLANK>Show entire review by question code</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href=show-entire-crit-v6.php?CritID=268904 target=_BLANK>Survey
+                                                        report in PDF version (6)</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href=show-entire-crit.php?CritID=268904&PrintView=1
+                                                        target=_BLANK>Show entire review in Print Mode</a></td>
+                                            </tr>
+                                        </table>
+                                        <span class="critInfoItemTitle">Questionnaire name</span>: <span
+                                            class="CritInfoItem">AGH Survey</span><BR>
+                                        <span class="critInfoItemTitle">Finish time</span>: <span
+                                            class="CritInfoItem">06.10.2023 16:15:50</span><BR>
+                                        <span class="critInfoItemTitle">Result</span>: <span class="CritInfoItem"><a
+                                                title='48.026315789474'>48.03</a></span><BR>
+                                        <span class="critInfoItemTitle">Client name</span>: <span class="CritInfoItem">A
+                                            Govt. Hospital</span><BR>
+                                        <span class="critInfoItemTitle">Reviewer name</span>: <span
+                                            class="CritInfoItem">vish</span><BR>
+                                        <span class="critInfoItemTitle">Full name</span>: <span class="CritInfoItem">All
+                                            India Institute of Medical Sciences</span><BR>
+                                        <span class="critInfoItemTitle">Status</span>: <span
+                                            class="CritInfoItem">Approved</span><BR>
+                                        <span class="critInfoItemTitle">Review number</span>: <span
+                                            class="CritInfoItem">268904</span><BR>
+                                        <span class="critInfoItemTitle">Comment if Any? [CF]</span>: <span
+                                            class="CritInfoItem"></span><BR>
+                                        <span class="critInfoItemTitle">[CF]</span>: <span
+                                            class="CritInfoItem"></span><BR>
+                                        <span class="critInfoItemTitle">Custom Time [CF]</span>: <span
+                                            class="CritInfoItem"></span><BR>
+                                        <span class="critInfoItemTitle">NUMBER</span>: <span
+                                            class="CritInfoItem"></span><BR>
+                                        <span class="critInfoItemTitle">DATE [CF]</span>: <span
+                                            class="CritInfoItem"></span><BR>
+                                        <span class="critInfoItemTitle">Review Natalia</span>: <span
+                                            class="CritInfoItem"></span><BR>
+                                        <table cellpadding="2">
+                                            <tr>
+                                            <tr>
+                                                <td><a href=crit-handling-details.php?CritID=268904>Handle review</a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                            <tr>
+                                                <td><a href=edit-entire-crit.php?CritID=268904>Edit entire review</a>
+                                                    (without fields and content checking)</td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href=show-entire-crit.php?CritID=268904&EnableEdit=1>Edit
+                                                        review</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td><a href=show-crit-modifications.php?CritID=268904>Show review
+                                                        modifications</A></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <script type="text/javascript">
+                                        addLoadEvent(hideFilterArea);
+                                    </script>
+                                    <table width='100%' class='begin-report-area'>
+                                        <tr>
+                                            <td class="begin-report-area-td">
+                                                <center>
+                                                    <P>
+                                                        <!-- JS/css files moved here so accessable by the requried class crit gallery -->
+
+                                                        <script src="libraries/jquery/lightbox/js/jquery.lightbox.js"
+                                                            type="text/javascript"></script>
+                                                        <link rel="stylesheet" type="text/css"
+                                                            href="https://eu.checker-soft.com/testing/libraries/jquery/lightbox/css/jquery.lightbox.css"
+                                                            media="screen" />
+                                                        <script type="text/javascript">
+                                                            $(document).ready(function () {
+                                                                $('.crit_268904_gallery a.lightboxable').lightBox();
+                                                                $('.cm-lightbox').lightBox();
+                                                                $('.comment-attachment .delete').click(function () {
+                                                                    return confirm('Are you sure you want to delete the selected attachment(s)?');
+                                                                });
+                                                            });
+                                                            //Used '.' instead of '#' So we can show gallereis on the basis of class instead of Ids
+                                                        </script>
+
+                                                        <script type="text/javascript">
+                                                            function activate_combo_users_to_send() {
+                                                                $("select#users_to_send").css("width", "320");
+                                                                $("select#users_to_send").multiselect({
+                                                                    oneOrMoreSelected: '% selected',
+                                                                    noneSelectedText: 'Select',
+                                                                    checkAllText: 'Check all',
+                                                                    uncheckAllText: 'Uncheck all',
+                                                                    selectedList: 4,
+                                                                    minWidth: 320,
+                                                                    classes: '',
+                                                                    position: 'below'
+
+                                                                }).multiselectfilter({ label: 'Filter', placeholder: 'Enter keywords' });
+                                                            }
+                                                            addLoadEvent(activate_combo_users_to_send);
+
+                                                        </script>
+
+                                                    <div class="accordion-ai-response">
+                                                        <h1>AI Responses</h1>
+                                                        <div class="q">
+                                                            <button>Recommendations for improvement: <i
+                                                                    class="fa-solid fa-add">+</i></button>
+                                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                                                Incidunt quaerat qui recusandae quis deserunt
+                                                                ratione molestiae rerum, veritatis reprehenderit
+                                                                inventore quasi fuga voluptatem alias officia
+                                                                perspiciatis
+                                                                corrupti repudiandae vitae eius. Lorem ipsum dolor sit
+                                                                amet consectetur adipisicing elit. Nam perspiciatis
+                                                                expedita quae? Ratione hic illo suscipit quod architecto
+                                                                corporis necessitatibus mollitia sapiente, velit
+                                                                dolorum odio iure natus quam porro cum!</p>
+                                                        </div>
+                                                        <div class="q">
+                                                            <button>Recommendations for improvement 2:<i
+                                                                    class="fa-solid fa-add">+</i></button>
+                                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                                                Dicta nostrum maxime autem neque aliquam omnis eum
+                                                                aperiam possimus blanditiis eaque velit harum doloribus
+                                                                illo debitis hic eos, explicabo, officiis et.</p>
+                                                        </div>
+                                                        <div class="q">
+                                                            <button>Recommendations for improvement 3:<i
+                                                                    class="fa-solid fa-add">+</i></button>
+                                                            <p>
+                                                                Lorem ipsum, dolor sit amet consectetur adipisicing
+                                                                elit. Perferendis voluptatum eum, illum quibusdam alias
+                                                                mollitia, ex debitis reiciendis quos dolorum architecto
+                                                                quaerat placeat natus voluptas dolor ad odio
+                                                                molestiae similique.
+                                                                Lorem ipsum dolor sit, amet consectetur adipisicing
+                                                                elit. Impedit tempore nemo quo facere nostrum dolore
+                                                                vero est sit itaque, ut delectus eaque officia, nisi
+                                                                eligendi minima error ab soluta ipsum. Lorem ipsum
+                                                                dolor sit amet consectetur adipisicing elit. Ducimus
+                                                                debitis libero temporibus nobis ut! Excepturi debitis
+                                                                quod perspiciatis distinctio nobis commodi, ea eius,
+                                                                quas eos deserunt odio error enim saepe!
+                                                            </p>
+                                                        </div>
+                                                    </div>
+
+                                                    <span class="critInfoItemTitle">Result</span>: <span
+                                                        class="CritInfoItem"><a
+                                                            title='48.026315789474'>48.03</a></span><BR>
+                                                    <span class="critInfoItemTitle">Accumulated score</span>: <span
+                                                        class="CritInfoItem">18.25 / 38.00</span><BR>
+                                                    <form action="show-entire-crit.php?CritID=268904" method="post"
+                                                        enctype="multipart/form-data">
+                                                        <table
+                                                            class="crit_268904_gallery report show-entire-crit-report"
+                                                            border=1 cellpadding="7">
+                                                            <thead class="report">
+                                                                <tr class="StickyHeader">
+                                                                    <td>Comment</td>
+                                                                    <td>Question</td>
+                                                                    <td>Answer</td>
+                                                                    <td>Answer value</td>
+                                                                    <td>Question weight</td>
+                                                                    <td>Details</td>
+                                                                    <td>Files</td>
+                                                                </tr>
+                                                            </thead>
+                                                            <tr>
+                                                                <td colspan="7"><span class="CritChap">1. General</span>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><textarea name="comment[139390;0;0;1]" rows="5"
+                                                                        cols="30"></textarea><button class="upload-btn"
+                                                                        type="button">Attach files</button>
+                                                                    <iframe
+                                                                        src="comment-attachment-popup.php?CritID=268904&amp;DataID=139390;0;0"
+                                                                        width="100%" height="300"></iframe>
+                                                                </td>
+                                                                <td><span
+                                                                        title='dataid: 139390, cdatID: 36084486'>1.1.0.</span>
+                                                                    LSIQ2: LSI - HS Remarks</td>
+                                                                <td>&nbsp;</td>
+                                                                <td></td>
+                                                                <td>/0.0</td>
+                                                                <td>58.106363636364&nbsp;</td>
+                                                                <td>&nbsp;</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><textarea name="comment[139641;0;0;2]" rows="5"
+                                                                        cols="30"></textarea><button class="upload-btn"
+                                                                        type="button">Attach files</button>
+                                                                    <iframe
+                                                                        src="comment-attachment-popup.php?CritID=268904&amp;DataID=139641;0;0"
+                                                                        width="100%" height="300"></iframe>
+                                                                </td>
+                                                                <td><span
+                                                                        title='dataid: 139641, cdatID: 36084487'>1.1.1.</span>
+                                                                    LSIQ5: Total HS Score.</td>
+                                                                <td>&nbsp;</td>
+                                                                <td></td>
+                                                                <td>/0.0</td>
+                                                                <td>170&nbsp;</td>
+                                                                <td>&nbsp;</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><textarea name="comment[139642;0;0;3]" rows="5"
+                                                                        cols="30"></textarea><button class="upload-btn"
+                                                                        type="button">Attach files</button>
+                                                                    <iframe
+                                                                        src="comment-attachment-popup.php?CritID=268904&amp;DataID=139642;0;0"
+                                                                        width="100%" height="300"></iframe>
+                                                                </td>
+                                                                <td><span
+                                                                        title='dataid: 139642, cdatID: 36084488'>1.1.2.</span>
+                                                                    LSIQ6: Total HS Score 2.</td>
+                                                                <td>&nbsp;</td>
+                                                                <td></td>
+                                                                <td>/0.0</td>
+                                                                <td>&nbsp;</td>
+                                                                <td>&nbsp;</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><textarea name="comment[139474;139636;0;4]" rows="5"
+                                                                        cols="30"></textarea><button class="upload-btn"
+                                                                        type="button">Attach files</button>
+                                                                    <iframe
+                                                                        src="comment-attachment-popup.php?CritID=268904&amp;DataID=139474;139636;0"
+                                                                        width="100%" height="300"></iframe>
+                                                                </td>
+                                                                <td><span
+                                                                        title='dataid: 139474, cdatID: 36084490'>1.1.3.</span>
+                                                                    LSIQ3: LSI 7S action taken - HS Score</td>
+                                                                <td>&nbsp;</td>
+                                                                <td></td>
+                                                                <td>/0.0</td>
+                                                                <td>20&nbsp;</td>
+                                                                <td>&nbsp;</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><textarea name="comment[139261;0;0;5]" rows="5"
+                                                                        cols="30"></textarea><button class="upload-btn"
+                                                                        type="button">Attach files</button>
+                                                                    <iframe
+                                                                        src="comment-attachment-popup.php?CritID=268904&amp;DataID=139261;0;0"
+                                                                        width="100%" height="300"></iframe>
+                                                                </td>
+                                                                <td><span
+                                                                        title='dataid: 139261, cdatID: 36084492'>1.1.4.</span>
+                                                                    Q2: Hospital Scenario.</td>
+                                                                <td>Finish Aduit&nbsp;</td>
+                                                                <td></td>
+                                                                <td>/0.0</td>
+                                                                <td>&nbsp;</td>
+                                                                <td>&nbsp;</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><textarea name="comment[155180;0;0;6]" rows="5"
+                                                                        cols="30"></textarea><button class="upload-btn"
+                                                                        type="button">Attach files</button>
+                                                                    <iframe
+                                                                        src="comment-attachment-popup.php?CritID=268904&amp;DataID=155180;0;0"
+                                                                        width="100%" height="300"></iframe>
+                                                                </td>
+                                                                <td><span
+                                                                        title='dataid: 155180, cdatID: 36084493'>1.1.5.</span>
+                                                                    Using Mobile App for field work?</td>
+                                                                <td>NO&nbsp;</td>
+                                                                <td></td>
+                                                                <td>/0.0</td>
+                                                                <td>&nbsp;</td>
+                                                                <td>&nbsp;</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td colspan="7"><span class="CritChap">2. 6 AGH LEFT
+                                                                        HOSPITAL</span> Score: <B>50.00</b> (Weight: 2.5
+                                                                    / 5.0)</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td colspan="7"><span class="CritSubc">2.1. AGH LEFT
+                                                                        HOSPITAL</span> Score: <b>50.00</b> (Weight: 2.5
+                                                                    / 5.0)</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><textarea name="comment[134526;0;0;7]" rows="5"
+                                                                        cols="30"></textarea><button class="upload-btn"
+                                                                        type="button">Attach files</button>
+                                                                    <iframe
+                                                                        src="comment-attachment-popup.php?CritID=268904&amp;DataID=134526;0;0"
+                                                                        width="100%" height="300"></iframe>
+                                                                </td>
+                                                                <td><span
+                                                                        title='dataid: 134526, cdatID: 36084494'>2.1.1.</span>
+                                                                    LH1: After you left the hospital, did you go
+                                                                    directly to your own home, to someone else’s home,
+                                                                    or to another health facility?</td>
+                                                                <td>Someone else’s home&nbsp;</td>
+                                                                <td></td>
+                                                                <td>/0.0</td>
+                                                                <td>&nbsp;</td>
+                                                                <td>&nbsp;</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><textarea name="comment[134527;0;0;8]" rows="5"
+                                                                        cols="30"></textarea><button class="upload-btn"
+                                                                        type="button">Attach files</button>
+                                                                    <iframe
+                                                                        src="comment-attachment-popup.php?CritID=268904&amp;DataID=134527;0;0"
+                                                                        width="100%" height="300"></iframe>
+                                                                </td>
+                                                                <td><span
+                                                                        title='dataid: 134527, cdatID: 36084495'>2.1.2.</span>
+                                                                    LH2: During this hospital stay, did doctors, nurses
+                                                                    or other hospital staff talk with you about whether
+                                                                    you would have the help you needed when you left the
+                                                                    hospital?</td>
+                                                                <td>Yes&nbsp;</td>
+                                                                <td><span class='simplegraph'><span
+                                                                            class='simplegraph_percentage_bar'><span
+                                                                                style="background:#5d8fdc;color:#5d8fdc"
+                                                                                class="simplegraph_full">....................</span></span><span
+                                                                            class='simplegraph_value'
+                                                                            style='white-space:nowrap;'>100.00</span></span>
+                                                                </td>
+                                                                <td>1.0/1.0</td>
+                                                                <td>&nbsp;</td>
+                                                                <td>&nbsp;</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><textarea name="comment[134528;0;0;9]" rows="5"
+                                                                        cols="30"></textarea><button class="upload-btn"
+                                                                        type="button">Attach files</button>
+                                                                    <iframe
+                                                                        src="comment-attachment-popup.php?CritID=268904&amp;DataID=134528;0;0"
+                                                                        width="100%" height="300"></iframe>
+                                                                </td>
+                                                                <td><span
+                                                                        title='dataid: 134528, cdatID: 36084496'>2.1.3.</span>
+                                                                    LH3: During this hospital stay, did you get
+                                                                    information in writing about what symptoms or health
+                                                                    problems to look out for after you left the
+                                                                    hospital?</td>
+                                                                <td>Yes&nbsp;</td>
+                                                                <td><span class='simplegraph'><span
+                                                                            class='simplegraph_percentage_bar'><span
+                                                                                style="background:#5d8fdc;color:#5d8fdc"
+                                                                                class="simplegraph_full">....................</span></span><span
+                                                                            class='simplegraph_value'
+                                                                            style='white-space:nowrap;'>100.00</span></span>
+                                                                </td>
+                                                                <td>1.0/1.0</td>
+                                                                <td>&nbsp;</td>
+                                                                <td>&nbsp;</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><textarea name="comment[134533;0;0;10]" rows="5"
+                                                                        cols="30"></textarea><button class="upload-btn"
+                                                                        type="button">Attach files</button>
+                                                                    <iframe
+                                                                        src="comment-attachment-popup.php?CritID=268904&amp;DataID=134533;0;0"
+                                                                        width="100%" height="300"></iframe>
+                                                                </td>
+                                                                <td><span
+                                                                        title='dataid: 134533, cdatID: 36084497'>2.1.4.</span>
+                                                                    LH4: During this hospital stay, staff took my
+                                                                    preferences and those of my family or caregiver into
+                                                                    account in deciding what my health care needs would
+                                                                    be when I left.</td>
+                                                                <td>Strongly disagree&nbsp;</td>
+                                                                <td><span class='simplegraph'><span
+                                                                            class='simplegraph_percentage_bar'><span
+                                                                                style="background:#e93b0e;color:#e93b0e"
+                                                                                class="simplegraph_full"></span><span
+                                                                                style="background:#6d6e71;color:#6d6e71"
+                                                                                class="simplegraph_empty">....................</span></span><span
+                                                                            class='simplegraph_value'
+                                                                            style='white-space:nowrap;'>0.00</span></span>
+                                                                </td>
+                                                                <td>0.0/1.0</td>
+                                                                <td>&nbsp;</td>
+                                                                <td>&nbsp;</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><textarea name="comment[134534;0;0;11]" rows="5"
+                                                                        cols="30"></textarea><button class="upload-btn"
+                                                                        type="button">Attach files</button>
+                                                                    <iframe
+                                                                        src="comment-attachment-popup.php?CritID=268904&amp;DataID=134534;0;0"
+                                                                        width="100%" height="300"></iframe>
+                                                                </td>
+                                                                <td><span
+                                                                        title='dataid: 134534, cdatID: 36084498'>2.1.5.</span>
+                                                                    LH5: When I left the hospital, I had a good
+                                                                    understanding of the things I was responsible for in
+                                                                    managing my health.</td>
+                                                                <td>Strongly disagree&nbsp;</td>
+                                                                <td><span class='simplegraph'><span
+                                                                            class='simplegraph_percentage_bar'><span
+                                                                                style="background:#e93b0e;color:#e93b0e"
+                                                                                class="simplegraph_full"></span><span
+                                                                                style="background:#6d6e71;color:#6d6e71"
+                                                                                class="simplegraph_empty">....................</span></span><span
+                                                                            class='simplegraph_value'
+                                                                            style='white-space:nowrap;'>0.00</span></span>
+                                                                </td>
+                                                                <td>0.0/1.0</td>
+                                                                <td>&nbsp;</td>
+                                                                <td>&nbsp;</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><textarea name="comment[134535;0;0;12]" rows="5"
+                                                                        cols="30"></textarea><button class="upload-btn"
+                                                                        type="button">Attach files</button>
+                                                                    <iframe
+                                                                        src="comment-attachment-popup.php?CritID=268904&amp;DataID=134535;0;0"
+                                                                        width="100%" height="300"></iframe>
+                                                                </td>
+                                                                <td><span
+                                                                        title='dataid: 134535, cdatID: 36084499'>2.1.6.</span>
+                                                                    LH6: When I left the hospital, I clearly understood
+                                                                    the purpose for taking each of my medications.</td>
+                                                                <td>Agree&nbsp;</td>
+                                                                <td><span class='simplegraph'><span
+                                                                            class='simplegraph_percentage_bar'><span
+                                                                                style="background:#bd8ce8;color:#bd8ce8"
+                                                                                class="simplegraph_full">..........</span><span
+                                                                                style="background:#6d6e71;color:#6d6e71"
+                                                                                class="simplegraph_empty">..........</span></span><span
+                                                                            class='simplegraph_value'
+                                                                            style='white-space:nowrap;'>50.00</span></span>
+                                                                </td>
+                                                                <td>0.5/1.0</td>
+                                                                <td>&nbsp;</td>
+                                                                <td>&nbsp;</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td colspan="7"><span class="CritChap">3. 5 AGH
+                                                                        RATING</span> Score: <B>52.50</b> (Weight: 5.3 /
+                                                                    10.0)</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td colspan="7"><span class="CritSubc">3.1. AGH
+                                                                        RATING</span> Score: <b>52.50</b> (Weight: 5.3 /
+                                                                    10.0)</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><textarea name="comment[134530;0;0;13]" rows="5"
+                                                                        cols="30"></textarea><button class="upload-btn"
+                                                                        type="button">Attach files</button>
+                                                                    <iframe
+                                                                        src="comment-attachment-popup.php?CritID=268904&amp;DataID=134530;0;0"
+                                                                        width="100%" height="300"></iframe>
+                                                                </td>
+                                                                <td><span
+                                                                        title='dataid: 134530, cdatID: 36084500'>3.1.1.</span>
+                                                                    OR1: Using any number from 0 to 10, where 0 is the
+                                                                    worst hospital possible and 10 is the best hospital
+                                                                    possible, what number would you use to rate this
+                                                                    hospital during your stay?</td>
+                                                                <td>8&nbsp;</td>
+                                                                <td><span class='simplegraph'><span
+                                                                            class='simplegraph_percentage_bar'><span
+                                                                                style="background:#bd8ce8;color:#bd8ce8"
+                                                                                class="simplegraph_full">................</span><span
+                                                                                style="background:#6d6e71;color:#6d6e71"
+                                                                                class="simplegraph_empty">....</span></span><span
+                                                                            class='simplegraph_value'
+                                                                            style='white-space:nowrap;'>80.00</span></span>
+                                                                </td>
+                                                                <td>4.0/5.0</td>
+                                                                <td>&nbsp;</td>
+                                                                <td>&nbsp;</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><textarea name="comment[134531;0;0;14]" rows="5"
+                                                                        cols="30"></textarea><button class="upload-btn"
+                                                                        type="button">Attach files</button>
+                                                                    <iframe
+                                                                        src="comment-attachment-popup.php?CritID=268904&amp;DataID=134531;0;0"
+                                                                        width="100%" height="300"></iframe>
+                                                                </td>
+                                                                <td><span
+                                                                        title='dataid: 134531, cdatID: 36084501'>3.1.2.</span>
+                                                                    OR2: Would you recommend this hospital to your
+                                                                    friends and family?</td>
+                                                                <td>Probably no&nbsp;</td>
+                                                                <td><span class='simplegraph'><span
+                                                                            class='simplegraph_percentage_bar'><span
+                                                                                style="background:#e93b0e;color:#e93b0e"
+                                                                                class="simplegraph_full">.....</span><span
+                                                                                style="background:#6d6e71;color:#6d6e71"
+                                                                                class="simplegraph_empty">...............</span></span><span
+                                                                            class='simplegraph_value'
+                                                                            style='white-space:nowrap;'>25.00</span></span>
+                                                                </td>
+                                                                <td>1.3/5.0</td>
+                                                                <td>&nbsp;</td>
+                                                                <td>&nbsp;</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td colspan="7"><span class="CritChap">4. 4 AGH
+                                                                        ENVIRONMENT</span> Score: <B>15.00</b> (Weight:
+                                                                    0.3 / 2.0)</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td colspan="7"><span class="CritSubc">4.1. AGH
+                                                                        ENVIRONMENT</span> Score: <b>15.00</b> (Weight:
+                                                                    0.3 / 2.0)</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><textarea name="comment[134514;0;0;15]" rows="5"
+                                                                        cols="30"></textarea><button class="upload-btn"
+                                                                        type="button">Attach files</button>
+                                                                    <iframe
+                                                                        src="comment-attachment-popup.php?CritID=268904&amp;DataID=134514;0;0"
+                                                                        width="100%" height="300"></iframe>
+                                                                </td>
+                                                                <td><span
+                                                                        title='dataid: 134514, cdatID: 36084502'>4.1.1.</span>
+                                                                    E1: During this hospital stay, how often were your
+                                                                    room and bathroom kept clean?</td>
+                                                                <td>Sometimes&nbsp;</td>
+                                                                <td><span class='simplegraph'><span
+                                                                            class='simplegraph_percentage_bar'><span
+                                                                                style="background:#e93b0e;color:#e93b0e"
+                                                                                class="simplegraph_full">......</span><span
+                                                                                style="background:#6d6e71;color:#6d6e71"
+                                                                                class="simplegraph_empty">..............</span></span><span
+                                                                            class='simplegraph_value'
+                                                                            style='white-space:nowrap;'>30.00</span></span>
+                                                                </td>
+                                                                <td>0.3/1.0</td>
+                                                                <td>&nbsp;</td>
+                                                                <td>&nbsp;</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><textarea name="comment[134515;0;0;16]" rows="5"
+                                                                        cols="30"></textarea><button class="upload-btn"
+                                                                        type="button">Attach files</button>
+                                                                    <iframe
+                                                                        src="comment-attachment-popup.php?CritID=268904&amp;DataID=134515;0;0"
+                                                                        width="100%" height="300"></iframe>
+                                                                </td>
+                                                                <td><span
+                                                                        title='dataid: 134515, cdatID: 36084503'>4.1.2.</span>
+                                                                    E2: During this hospital stay, how often was the
+                                                                    area around your room quiet at night?</td>
+                                                                <td>Never&nbsp;</td>
+                                                                <td><span class='simplegraph'><span
+                                                                            class='simplegraph_percentage_bar'><span
+                                                                                style="background:#e93b0e;color:#e93b0e"
+                                                                                class="simplegraph_full"></span><span
+                                                                                style="background:#6d6e71;color:#6d6e71"
+                                                                                class="simplegraph_empty">....................</span></span><span
+                                                                            class='simplegraph_value'
+                                                                            style='white-space:nowrap;'>0.00</span></span>
+                                                                </td>
+                                                                <td>0.0/1.0</td>
+                                                                <td>&nbsp;</td>
+                                                                <td>&nbsp;</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td colspan="7"><span class="CritChap">5. 3 AGH YOURs'
+                                                                        EXPERIENCES</span> Score: <B>61.67</b> (Weight:
+                                                                    3.7 / 6.0)</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td colspan="7"><span class="CritSubc">5.1. AGH YOURs'
+                                                                        EXPERIENCES</span> Score: <b>61.67</b> (Weight:
+                                                                    3.7 / 6.0)</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><textarea name="comment[134517;0;0;17]" rows="5"
+                                                                        cols="30"></textarea><button class="upload-btn"
+                                                                        type="button">Attach files</button>
+                                                                    <iframe
+                                                                        src="comment-attachment-popup.php?CritID=268904&amp;DataID=134517;0;0"
+                                                                        width="100%" height="300"></iframe>
+                                                                </td>
+                                                                <td><span
+                                                                        title='dataid: 134517, cdatID: 36084504'>5.1.1.</span>
+                                                                    YE1: Need help in getting to the bathroom or in
+                                                                    using a bedpan?</td>
+                                                                <td>Yes&nbsp;</td>
+                                                                <td><span class='simplegraph'><span
+                                                                            class='simplegraph_percentage_bar'><span
+                                                                                style="background:#5d8fdc;color:#5d8fdc"
+                                                                                class="simplegraph_full">....................</span></span><span
+                                                                            class='simplegraph_value'
+                                                                            style='white-space:nowrap;'>100.00</span></span>
+                                                                </td>
+                                                                <td>1.0/1.0</td>
+                                                                <td>&nbsp;</td>
+                                                                <td>&nbsp;</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><textarea name="comment[134518;0;0;18]" rows="5"
+                                                                        cols="30"></textarea><button class="upload-btn"
+                                                                        type="button">Attach files</button>
+                                                                    <iframe
+                                                                        src="comment-attachment-popup.php?CritID=268904&amp;DataID=134518;0;0"
+                                                                        width="100%" height="300"></iframe>
+                                                                </td>
+                                                                <td><span
+                                                                        title='dataid: 134518, cdatID: 36084505'>5.1.2.</span>
+                                                                    YE2: Help in getting to the bathroom or bedpen?</td>
+                                                                <td>Usually&nbsp;</td>
+                                                                <td><span class='simplegraph'><span
+                                                                            class='simplegraph_percentage_bar'><span
+                                                                                style="background:#bd8ce8;color:#bd8ce8"
+                                                                                class="simplegraph_full">..............</span><span
+                                                                                style="background:#6d6e71;color:#6d6e71"
+                                                                                class="simplegraph_empty">......</span></span><span
+                                                                            class='simplegraph_value'
+                                                                            style='white-space:nowrap;'>70.00</span></span>
+                                                                </td>
+                                                                <td>0.7/1.0</td>
+                                                                <td>&nbsp;</td>
+                                                                <td>&nbsp;</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><textarea name="comment[134520;0;0;19]" rows="5"
+                                                                        cols="30"></textarea><button class="upload-btn"
+                                                                        type="button">Attach files</button>
+                                                                    <iframe
+                                                                        src="comment-attachment-popup.php?CritID=268904&amp;DataID=134520;0;0"
+                                                                        width="100%" height="300"></iframe>
+                                                                </td>
+                                                                <td><span
+                                                                        title='dataid: 134520, cdatID: 36084506'>5.1.3.</span>
+                                                                    YE4: how often was your pain well controlled?</td>
+                                                                <td>Usually&nbsp;</td>
+                                                                <td><span class='simplegraph'><span
+                                                                            class='simplegraph_percentage_bar'><span
+                                                                                style="background:#bd8ce8;color:#bd8ce8"
+                                                                                class="simplegraph_full">..............</span><span
+                                                                                style="background:#6d6e71;color:#6d6e71"
+                                                                                class="simplegraph_empty">......</span></span><span
+                                                                            class='simplegraph_value'
+                                                                            style='white-space:nowrap;'>70.00</span></span>
+                                                                </td>
+                                                                <td>0.7/1.0</td>
+                                                                <td>&nbsp;</td>
+                                                                <td>&nbsp;</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><textarea name="comment[134521;0;0;20]" rows="5"
+                                                                        cols="30"></textarea><button class="upload-btn"
+                                                                        type="button">Attach files</button>
+                                                                    <iframe
+                                                                        src="comment-attachment-popup.php?CritID=268904&amp;DataID=134521;0;0"
+                                                                        width="100%" height="300"></iframe>
+                                                                </td>
+                                                                <td><span
+                                                                        title='dataid: 134521, cdatID: 36084507'>5.1.4.</span>
+                                                                    YE5: Hospital staff helps?</td>
+                                                                <td>Usually&nbsp;</td>
+                                                                <td><span class='simplegraph'><span
+                                                                            class='simplegraph_percentage_bar'><span
+                                                                                style="background:#bd8ce8;color:#bd8ce8"
+                                                                                class="simplegraph_full">..............</span><span
+                                                                                style="background:#6d6e71;color:#6d6e71"
+                                                                                class="simplegraph_empty">......</span></span><span
+                                                                            class='simplegraph_value'
+                                                                            style='white-space:nowrap;'>70.00</span></span>
+                                                                </td>
+                                                                <td>0.7/1.0</td>
+                                                                <td>&nbsp;</td>
+                                                                <td>&nbsp;</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><textarea name="comment[134522;0;0;21]" rows="5"
+                                                                        cols="30"></textarea><button class="upload-btn"
+                                                                        type="button">Attach files</button>
+                                                                    <iframe
+                                                                        src="comment-attachment-popup.php?CritID=268904&amp;DataID=134522;0;0"
+                                                                        width="100%" height="300"></iframe>
+                                                                </td>
+                                                                <td><span
+                                                                        title='dataid: 134522, cdatID: 36084508'>5.1.5.</span>
+                                                                    YE6: Were you given any medicine that you had not
+                                                                    taken before?</td>
+                                                                <td>NA&nbsp;</td>
+                                                                <td></td>
+                                                                <td>/0.0</td>
+                                                                <td>&nbsp;</td>
+                                                                <td>&nbsp;</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><textarea name="comment[134523;0;0;22]" rows="5"
+                                                                        cols="30"></textarea><button class="upload-btn"
+                                                                        type="button">Attach files</button>
+                                                                    <iframe
+                                                                        src="comment-attachment-popup.php?CritID=268904&amp;DataID=134523;0;0"
+                                                                        width="100%" height="300"></iframe>
+                                                                </td>
+                                                                <td><span
+                                                                        title='dataid: 134523, cdatID: 36084509'>5.1.6.</span>
+                                                                    YE7: How often did hospital staff tell you what the
+                                                                    medicine was for?</td>
+                                                                <td>Sometimes&nbsp;</td>
+                                                                <td><span class='simplegraph'><span
+                                                                            class='simplegraph_percentage_bar'><span
+                                                                                style="background:#e93b0e;color:#e93b0e"
+                                                                                class="simplegraph_full">......</span><span
+                                                                                style="background:#6d6e71;color:#6d6e71"
+                                                                                class="simplegraph_empty">..............</span></span><span
+                                                                            class='simplegraph_value'
+                                                                            style='white-space:nowrap;'>30.00</span></span>
+                                                                </td>
+                                                                <td>0.3/1.0</td>
+                                                                <td>&nbsp;</td>
+                                                                <td>&nbsp;</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><textarea name="comment[134524;0;0;23]" rows="5"
+                                                                        cols="30"></textarea><button class="upload-btn"
+                                                                        type="button">Attach files</button>
+                                                                    <iframe
+                                                                        src="comment-attachment-popup.php?CritID=268904&amp;DataID=134524;0;0"
+                                                                        width="100%" height="300"></iframe>
+                                                                </td>
+                                                                <td><span
+                                                                        title='dataid: 134524, cdatID: 36084510'>5.1.7.</span>
+                                                                    YE8: Staff describe possible side effects you
+                                                                    understand?</td>
+                                                                <td>Sometimes&nbsp;</td>
+                                                                <td><span class='simplegraph'><span
+                                                                            class='simplegraph_percentage_bar'><span
+                                                                                style="background:#e93b0e;color:#e93b0e"
+                                                                                class="simplegraph_full">......</span><span
+                                                                                style="background:#6d6e71;color:#6d6e71"
+                                                                                class="simplegraph_empty">..............</span></span><span
+                                                                            class='simplegraph_value'
+                                                                            style='white-space:nowrap;'>30.00</span></span>
+                                                                </td>
+                                                                <td>0.3/1.0</td>
+                                                                <td>&nbsp;</td>
+                                                                <td>&nbsp;</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><textarea name="comment[139670;0;0;24]" rows="5"
+                                                                        cols="30"></textarea><button class="upload-btn"
+                                                                        type="button">Attach files</button>
+                                                                    <iframe
+                                                                        src="comment-attachment-popup.php?CritID=268904&amp;DataID=139670;0;0"
+                                                                        width="100%" height="300"></iframe>
+                                                                </td>
+                                                                <td><span
+                                                                        title='dataid: 139670, cdatID: 36084511'>5.1.8.</span>
+                                                                    A2: Experince section finish</td>
+                                                                <td>No&nbsp;</td>
+                                                                <td></td>
+                                                                <td>/0.0</td>
+                                                                <td>&nbsp;</td>
+                                                                <td>&nbsp;</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td colspan="7"><span class="CritChap">6. 2 AGH
+                                                                        NURSES</span> Score: <B>43.33</b> (Weight: 2.6 /
+                                                                    6.0)</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td colspan="7"><span class="CritSubc">6.1. AGH
+                                                                        NURSES</span> Score: <b>43.33</b> (Weight: 2.6 /
+                                                                    6.0)</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><textarea name="comment[134506;0;0;25]" rows="5"
+                                                                        cols="30"></textarea><button class="upload-btn"
+                                                                        type="button">Attach files</button>
+                                                                    <iframe
+                                                                        src="comment-attachment-popup.php?CritID=268904&amp;DataID=134506;0;0"
+                                                                        width="100%" height="300"></iframe>
+                                                                </td>
+                                                                <td><span
+                                                                        title='dataid: 134506, cdatID: 36084512'>6.1.1.</span>
+                                                                    N2: Consultantul s-a asigurat că sunteți fumător?
+                                                                </td>
+                                                                <td>Usually&nbsp;</td>
+                                                                <td><span class='simplegraph'><span
+                                                                            class='simplegraph_percentage_bar'><span
+                                                                                style="background:#bd8ce8;color:#bd8ce8"
+                                                                                class="simplegraph_full">..............</span><span
+                                                                                style="background:#6d6e71;color:#6d6e71"
+                                                                                class="simplegraph_empty">......</span></span><span
+                                                                            class='simplegraph_value'
+                                                                            style='white-space:nowrap;'>70.00</span></span>
+                                                                </td>
+                                                                <td>1.4/2.0</td>
+                                                                <td>&nbsp;</td>
+                                                                <td>&nbsp;</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><textarea name="comment[134507;0;0;26]" rows="5"
+                                                                        cols="30"></textarea><button class="upload-btn"
+                                                                        type="button">Attach files</button>
+                                                                    <iframe
+                                                                        src="comment-attachment-popup.php?CritID=268904&amp;DataID=134507;0;0"
+                                                                        width="100%" height="300"></iframe>
+                                                                </td>
+                                                                <td><span
+                                                                        title='dataid: 134507, cdatID: 36084513'>6.1.2.</span>
+                                                                    N3: nurses <u>explain things</u> in a way you could
+                                                                    understand?</td>
+                                                                <td>Sometimes&nbsp;</td>
+                                                                <td><span class='simplegraph'><span
+                                                                            class='simplegraph_percentage_bar'><span
+                                                                                style="background:#e93b0e;color:#e93b0e"
+                                                                                class="simplegraph_full">......</span><span
+                                                                                style="background:#6d6e71;color:#6d6e71"
+                                                                                class="simplegraph_empty">..............</span></span><span
+                                                                            class='simplegraph_value'
+                                                                            style='white-space:nowrap;'>30.00</span></span>
+                                                                </td>
+                                                                <td>0.6/2.0</td>
+                                                                <td>&nbsp;</td>
+                                                                <td>&nbsp;</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><textarea name="comment[134508;0;0;27]" rows="5"
+                                                                        cols="30"></textarea><button class="upload-btn"
+                                                                        type="button">Attach files</button>
+                                                                    <iframe
+                                                                        src="comment-attachment-popup.php?CritID=268904&amp;DataID=134508;0;0"
+                                                                        width="100%" height="300"></iframe>
+                                                                </td>
+                                                                <td><span
+                                                                        title='dataid: 134508, cdatID: 36084514'>6.1.3.</span>
+                                                                    N4: get help as soon as you wanted it?</td>
+                                                                <td>Sometimes&nbsp;</td>
+                                                                <td><span class='simplegraph'><span
+                                                                            class='simplegraph_percentage_bar'><span
+                                                                                style="background:#e93b0e;color:#e93b0e"
+                                                                                class="simplegraph_full">......</span><span
+                                                                                style="background:#6d6e71;color:#6d6e71"
+                                                                                class="simplegraph_empty">..............</span></span><span
+                                                                            class='simplegraph_value'
+                                                                            style='white-space:nowrap;'>30.00</span></span>
+                                                                </td>
+                                                                <td>0.6/2.0</td>
+                                                                <td>&nbsp;</td>
+                                                                <td>&nbsp;</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><textarea name="comment[156660;0;0;28]" rows="5"
+                                                                        cols="30"></textarea><button class="upload-btn"
+                                                                        type="button">Attach files</button>
+                                                                    <iframe
+                                                                        src="comment-attachment-popup.php?CritID=268904&amp;DataID=156660;0;0"
+                                                                        width="100%" height="300"></iframe>
+                                                                </td>
+                                                                <td><span
+                                                                        title='dataid: 156660, cdatID: 36084515'>6.1.4.</span>
+                                                                    coding2: Suggested improvements for Nurses</td>
+                                                                <td>Enhance communication with handouts&nbsp;</td>
+                                                                <td></td>
+                                                                <td>/0.0</td>
+                                                                <td>&nbsp;</td>
+                                                                <td>&nbsp;</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td colspan="7"><span class="CritChap">7. 1 AGH
+                                                                        DOCTORS</span> Score: <B>43.33</b> (Weight: 3.9
+                                                                    / 9.0)</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><textarea name="comment[134510;0;0;29]" rows="5"
+                                                                        cols="30"></textarea><button class="upload-btn"
+                                                                        type="button">Attach files</button>
+                                                                    <iframe
+                                                                        src="comment-attachment-popup.php?CritID=268904&amp;DataID=134510;0;0"
+                                                                        width="100%" height="300"></iframe>
+                                                                </td>
+                                                                <td><span
+                                                                        title='dataid: 134510, cdatID: 36084517'>7.1.1.</span>
+                                                                    D1: how often did doctors treat you with courtesy
+                                                                    and respect?</td>
+                                                                <td>Usually&nbsp;</td>
+                                                                <td><span class='simplegraph'><span
+                                                                            class='simplegraph_percentage_bar'><span
+                                                                                style="background:#bd8ce8;color:#bd8ce8"
+                                                                                class="simplegraph_full">..............</span><span
+                                                                                style="background:#6d6e71;color:#6d6e71"
+                                                                                class="simplegraph_empty">......</span></span><span
+                                                                            class='simplegraph_value'
+                                                                            style='white-space:nowrap;'>70.00</span></span>
+                                                                </td>
+                                                                <td>2.1/3.0</td>
+                                                                <td>&nbsp;</td>
+                                                                <td>&nbsp;</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><textarea name="comment[134511;0;0;30]" rows="5"
+                                                                        cols="30"></textarea><button class="upload-btn"
+                                                                        type="button">Attach files</button>
+                                                                    <iframe
+                                                                        src="comment-attachment-popup.php?CritID=268904&amp;DataID=134511;0;0"
+                                                                        width="100%" height="300"></iframe>
+                                                                </td>
+                                                                <td><span
+                                                                        title='dataid: 134511, cdatID: 36084518'>7.1.2.</span>
+                                                                    D2: how often did doctors <u>listen carefully to
+                                                                        you</u>?</td>
+                                                                <td>Sometimes&nbsp;</td>
+                                                                <td><span class='simplegraph'><span
+                                                                            class='simplegraph_percentage_bar'><span
+                                                                                style="background:#e93b0e;color:#e93b0e"
+                                                                                class="simplegraph_full">......</span><span
+                                                                                style="background:#6d6e71;color:#6d6e71"
+                                                                                class="simplegraph_empty">..............</span></span><span
+                                                                            class='simplegraph_value'
+                                                                            style='white-space:nowrap;'>30.00</span></span>
+                                                                </td>
+                                                                <td>0.9/3.0</td>
+                                                                <td>&nbsp;</td>
+                                                                <td>&nbsp;</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><textarea name="comment[134512;0;0;31]" rows="5"
+                                                                        cols="30"></textarea><button class="upload-btn"
+                                                                        type="button">Attach files</button>
+                                                                    <iframe
+                                                                        src="comment-attachment-popup.php?CritID=268904&amp;DataID=134512;0;0"
+                                                                        width="100%" height="300"></iframe>
+                                                                </td>
+                                                                <td><span
+                                                                        title='dataid: 134512, cdatID: 36084519'>7.1.3.</span>
+                                                                    D3: how often did doctors <u>explain things</u> in a
+                                                                    way you could understand?</td>
+                                                                <td>Sometimes&nbsp;</td>
+                                                                <td><span class='simplegraph'><span
+                                                                            class='simplegraph_percentage_bar'><span
+                                                                                style="background:#e93b0e;color:#e93b0e"
+                                                                                class="simplegraph_full">......</span><span
+                                                                                style="background:#6d6e71;color:#6d6e71"
+                                                                                class="simplegraph_empty">..............</span></span><span
+                                                                            class='simplegraph_value'
+                                                                            style='white-space:nowrap;'>30.00</span></span>
+                                                                </td>
+                                                                <td>0.9/3.0</td>
+                                                                <td>&nbsp;</td>
+                                                                <td>&nbsp;</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><textarea name="comment[139669;0;0;32]" rows="5"
+                                                                        cols="30"></textarea><button class="upload-btn"
+                                                                        type="button">Attach files</button>
+                                                                    <iframe
+                                                                        src="comment-attachment-popup.php?CritID=268904&amp;DataID=139669;0;0"
+                                                                        width="100%" height="300"></iframe>
+                                                                </td>
+                                                                <td><span
+                                                                        title='dataid: 139669, cdatID: 36084520'>7.1.4.</span>
+                                                                    A1: Doctor section finish</td>
+                                                                <td>No&nbsp;</td>
+                                                                <td></td>
+                                                                <td>/0.0</td>
+                                                                <td>&nbsp;</td>
+                                                                <td>&nbsp;</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><textarea name="comment[156659;0;0;33]" rows="5"
+                                                                        cols="30"></textarea><button class="upload-btn"
+                                                                        type="button">Attach files</button>
+                                                                    <iframe
+                                                                        src="comment-attachment-popup.php?CritID=268904&amp;DataID=156659;0;0"
+                                                                        width="100%" height="300"></iframe>
+                                                                </td>
+                                                                <td><span
+                                                                        title='dataid: 156659, cdatID: 36084521'>7.1.5.</span>
+                                                                    coding1: Suggested improvements for Doctors</td>
+                                                                <td class="mc-answer">
+                                                                    <div class="mc-answers">
+                                                                        <p>Schedule by grouping like activities</p>
+                                                                        <p>Use midlevel providers wisely</p>
+                                                                    </div>&nbsp;
+                                                                </td>
+                                                                <td class="mc-score"></td>
+                                                                <td>/0.0</td>
+                                                                <td>&nbsp;</td>
+                                                                <td>&nbsp;</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td colspan="7"><span class="CritChap">8. 7 AGH ABOUT
+                                                                        YOU</span></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td colspan="7"><span class="CritSubc">8.1. AGH ABOUT
+                                                                        YOU</span></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><textarea name="comment[134537;0;0;34]" rows="5"
+                                                                        cols="30"></textarea><button class="upload-btn"
+                                                                        type="button">Attach files</button>
+                                                                    <iframe
+                                                                        src="comment-attachment-popup.php?CritID=268904&amp;DataID=134537;0;0"
+                                                                        width="100%" height="300"></iframe>
+                                                                </td>
+                                                                <td><span
+                                                                        title='dataid: 134537, cdatID: 36084523'>8.1.1.</span>
+                                                                    AY1: During this hospital stay, were you admitted to
+                                                                    this hospital through the Emergency Room?</td>
+                                                                <td>Yes&nbsp;</td>
+                                                                <td></td>
+                                                                <td>0.0/0.0</td>
+                                                                <td>&nbsp;</td>
+                                                                <td>&nbsp;</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><textarea name="comment[134538;0;0;35]" rows="5"
+                                                                        cols="30"></textarea><button class="upload-btn"
+                                                                        type="button">Attach files</button>
+                                                                    <iframe
+                                                                        src="comment-attachment-popup.php?CritID=268904&amp;DataID=134538;0;0"
+                                                                        width="100%" height="300"></iframe>
+                                                                </td>
+                                                                <td><span
+                                                                        title='dataid: 134538, cdatID: 36084524'>8.1.2.</span>
+                                                                    AY2: In general, how would you rate your overall
+                                                                    health?</td>
+                                                                <td>Fair&nbsp;</td>
+                                                                <td></td>
+                                                                <td>0.0/0.0</td>
+                                                                <td>&nbsp;</td>
+                                                                <td>&nbsp;</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><textarea name="comment[134539;0;0;36]" rows="5"
+                                                                        cols="30"></textarea><button class="upload-btn"
+                                                                        type="button">Attach files</button>
+                                                                    <iframe
+                                                                        src="comment-attachment-popup.php?CritID=268904&amp;DataID=134539;0;0"
+                                                                        width="100%" height="300"></iframe>
+                                                                </td>
+                                                                <td><span
+                                                                        title='dataid: 134539, cdatID: 36084525'>8.1.3.</span>
+                                                                    AY3: In general, how would you rate your overall
+                                                                    <u><b><i>mental or emotional health</u></b></i>?
+                                                                </td>
+                                                                <td>Fair&nbsp;</td>
+                                                                <td></td>
+                                                                <td>0.0/0.0</td>
+                                                                <td>&nbsp;</td>
+                                                                <td>&nbsp;</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><textarea name="comment[134540;0;0;37]" rows="5"
+                                                                        cols="30"></textarea><button class="upload-btn"
+                                                                        type="button">Attach files</button>
+                                                                    <iframe
+                                                                        src="comment-attachment-popup.php?CritID=268904&amp;DataID=134540;0;0"
+                                                                        width="100%" height="300"></iframe>
+                                                                </td>
+                                                                <td><span
+                                                                        title='dataid: 134540, cdatID: 36084526'>8.1.4.</span>
+                                                                    AY4: What is the highest grade or level of school
+                                                                    that you have <u>completed</u>?</td>
+                                                                <td>4-year college graduate&nbsp;</td>
+                                                                <td></td>
+                                                                <td>0.0/0.0</td>
+                                                                <td>&nbsp;</td>
+                                                                <td>&nbsp;</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><textarea name="comment[134541;0;0;38]" rows="5"
+                                                                        cols="30"></textarea><button class="upload-btn"
+                                                                        type="button">Attach files</button>
+                                                                    <iframe
+                                                                        src="comment-attachment-popup.php?CritID=268904&amp;DataID=134541;0;0"
+                                                                        width="100%" height="300"></iframe>
+                                                                </td>
+                                                                <td><span
+                                                                        title='dataid: 134541, cdatID: 36084527'>8.1.5.</span>
+                                                                    AY5: Are you of Spanish, Latino origin or descent?
+                                                                </td>
+                                                                <td>Yes, Puerto Rican&nbsp;</td>
+                                                                <td></td>
+                                                                <td>/0.0</td>
+                                                                <td>&nbsp;</td>
+                                                                <td>&nbsp;</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td><textarea name="comment[134542;0;0;39]" rows="5"
+                                                                        cols="30"></textarea><button class="upload-btn"
+                                                                        type="button">Attach files</button>
+                                                                    <iframe
+                                                                        src="comment-attachment-popup.php?CritID=268904&amp;DataID=134542;0;0"
+                                                                        width="100%" height="300"></iframe>
+                                                                </td>
+                                                                <td><span
+                                                                        title='dataid: 134542, cdatID: 36084528'>8.1.6.</span>
+                                                                    AY6: What is your race? Please choose one or more.
+                                                                </td>
+                                                                <td class="mc-answer">
+                                                                    <div class="mc-answers">
+                                                                        <p>Native Hawaiian or other Pacific Islander</p>
+                                                                        <p>American Indian or Alaska Native</p>
+                                                                    </div>&nbsp;
+                                                                </td>
+                                                                <td class="mc-score"></td>
+                                                                <td>/0.0</td>
+                                                                <td>&nbsp;</td>
+                                                                <td>&nbsp;</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td colspan='1'><span>AI-Question</span></td>
+                                                                <td colspan='7'>
+                                                                    <h2 style="font-size:30px;">Recommendations for
+                                                                        improvement:</h2>
+                                                                    1. Enhance communication with handouts for nurses.
+                                                                    2. Schedule by grouping like activities and use
+                                                                    midlevel providers wisely for doctors.
+                                                                </td>
+                                                            </tr>
+                                                        </table><BR>
+                                                        Send update to the folowing users<BR>
+                                                        <table border="0" cellpadding="0">
+                                                            <tr>
+                                                                <td><span dir='ltr'><select name="users_to_send[]"
+                                                                            id="users_to_send" class="multiselect"
+                                                                            multiple="multiple">
+                                                                            <option value="11334">Alejandra Task Asigner
+                                                                            </option>
+                                                                            <option value="11850">Alex Bbbb</option>
+                                                                            <option value="11907">Analyst 02 [TESTING]
+                                                                            </option>
+                                                                            <option value="11842">Analyst [Testing]
+                                                                            </option>
+                                                                            <option value="11359">Azam</option>
+                                                                            <option value="11173">BALASUBRAMANIAN Haresh
+                                                                            </option>
+                                                                            <option value="11266">BARCELONA</option>
+                                                                            <option value="11906">Belle Analyst Test
+                                                                            </option>
+                                                                            <option value="11175">Branch Manager
+                                                                            </option>
+                                                                            <option value="11191">cristina1</option>
+                                                                            <option value="11352">Cyprian</option>
+                                                                            <option value="11238">df</option>
+                                                                            <option value="11240">df</option>
+                                                                            <option value="11242">df</option>
+                                                                            <option value="11127">EQ</option>
+                                                                            <option value="9033">Jurry</option>
+                                                                            <option value="11176">Main Manager</option>
+                                                                            <option value="11192">MIS דמו</option>
+                                                                            <option value="11241">olegtest2</option>
+                                                                            <option value="11245">olegtest4</option>
+                                                                            <option value="11246">olegtest5</option>
+                                                                            <option value="11247">olegtest6</option>
+                                                                            <option value="11248">olegtest7</option>
+                                                                            <option value="11899">perf</option>
+                                                                            <option value="9030">Rajpura1</option>
+                                                                            <option value="11237">sdf</option>
+                                                                            <option value="11187">show entire</option>
+                                                                            <option value="11233">SKD-1</option>
+                                                                            <option value="11773">Soiko Oksana User
+                                                                                (Special Permissions)</option>
+                                                                            <option value="11174">SQI Manager</option>
+                                                                            <option value="11370">Test Vasile</option>
+                                                                            <option value="11200">TestBT</option>
+                                                                            <option value="11817">twoclientstest
+                                                                            </option>
+                                                                            <option value="11172">user name1</option>
+                                                                            <option value="11268">User two hundred
+                                                                                twenty two</option>
+                                                                            <option value="11955">User11.1</option>
+                                                                            <option value="11239">User11.4</option>
+                                                                            <option value="11956">User12.1</option>
+                                                                            <option value="11958">User12.111</option>
+                                                                            <option value="11252">User122</option>
+                                                                            <option value="11253">User123</option>
+                                                                            <option value="11269">User333</option>
+                                                                            <option value="11123">vishav Air QA</option>
+                                                                            <option value="11124">vishav air QA1
+                                                                            </option>
+                                                                            <option value="11157">ZOIA</option>
+                                                                        </select></span></td>
+                                                            </tr>
+                                                        </table><BR>
+                                                        <input type=hidden id="CritID" name="CritID"
+                                                            value="268904"><input type="submit" name="save_comments"
+                                                            id="save_comments" class="btn-input" value="Save comments"
+                                                            onclick="if (!this.clicked) { toggleButton(this, 'Please wait'); } "><BR>
+                                                        <a class="linkClass" target="_NEW"
+                                                            href="https://eu.checker-soft.com/testing/client-reviews-status-management.php">Client
+                                                            comments
+                                                            management</a><BR>
+                                                    </form><BR>
+                                                    <BR>
+                                                    <center>
+                                                        <table id='crit_268904_gallery' class='crit_268904_gallery'
+                                                            width='80%'>
+                                        </tr>
+                                    </table>
+                                    <center>
+                                        <script type="">
+        var flag;
+        function select_all(){
+        if(flag==0){
+                  $("input.gallery_images_chkboxes").removeAttr("checked");
+                  $("#selectAll").val("Select all");
+                   flag=1;
+         }
+         else{
+        $("input.gallery_images_chkboxes").prop("checked", true);
+                $("#selectAll").val("UnSelect all");    
+                flag=0;
+         }
+        }
+        function opendialog() {
+              $("#addnoteform").dialog({
+              modal: true,
+              resizable: false,
+              title:"Comment",
+              width:500,
+              maxWidth: 600, 
+              position: {
+                         my: "top",
+                         at: "top",
+                         of: $("#thenote"),
+                         collision: "none"
+                         }
+});
+        }
+                    function imgs_generate_zip(){
+                        // put nice loading image
+                        $("#imgs_zip_download_link").show();
+                        // collect the selected attachments IDs
+                        attachments=[];
+                        var i = 0;
+                        $("input:checked[name^=gallery_images_chkboxes]").each(function () {
+                            attachments[i] = $(this).attr("value");
+                            i++;
+                        });
+                        // call ajax_make_zip with the IDs
+                        if(i>0)
+                        {
+                        //var dataString = AttachmentIDs=attachments&CritIDs=268904;
+                        $.ajax({
+                            type: "POST",
+                               data: {AttachmentIDs:attachments, CritIDs:268904},
+                               url: "ajax_make_attachments_zip.php",
+                               success: function( msg ) {
+                                       // replace loading image .. and print the return on screen
+                                         $("#imgs_zip_download_link").html(msg);
+                                         return false;
+                            },
+                            async: false});
+                        }
+                        return false;
+                    }
+                    </script><BR>
+                                        <div id="imgs_zip_download_link" style="display: none;"></div><br><input
+                                            type="submit" name="selectAll" id="selectAll" class="btn-input"
+                                            value="Select all" onclick="select_all();">&nbsp;<input type="submit"
+                                            name="downloadAll" id="downloadAll" class="btn-input" value="Download"
+                                            onclick="imgs_generate_zip();"><BR>
+                                        <BR>
+                                        <a href="https://eu.checker-soft.com/testing/javascript:opendialog();;"
+                                            id="thenote" class="linkClass AddNote">Add
+                                            note</a>
+                                        <div id='addnoteform' style="display:none;"><br />
+                                            <form method=POST action=show-entire-crit.php>
+                                                Comment about this review:<BR>
+                                                <textarea name=critCommentText rows=5 cols=60></textarea><BR>
+                                                <input type=hidden id="CritID" name="CritID" value="268904"><input
+                                                    type="submit" name="commentCrit" id="commentCrit" class="btn-input"
+                                                    value="Send"
+                                                    onclick="if (!this.clicked) { toggleButton(this, 'Please wait'); } ">
+                                            </form>
+                                        </div><BR>
+                                        <BR>
+                                        <BR>
+                                        <div class="ui-state-highlight ui-corner-all"
+                                            style="margin-top: 20px; padding: 0 .7em;">
+                                            <p class="announcement-text"><span class="ui-icon ui-icon-info"
+                                                    style="float: left; margin-right: .3em;"></span>
+                                                <font color=darkred>Status: New finished audit.</font>
+                                            </p>
+                                        </div>
+                                        <table cellpadding=5>
+                                            <tr>
+                                                <td><a class="linkClass"
+                                                        href="https://eu.checker-soft.com/testing/javascript:history.go(-1);">Go
+                                                        back</a>
+                                                </td>
+                                                <td><a class='linkBack' href=menu-reports.php>Back to reports menu</a>
+                                                </td>
+                                                <td><a class='linkclass' href=main-menu.php>Main menu</a></td>
+                                            </tr>
+                                        </table>
+                                        <script type="text/javascript">
+                                            $(document).ready(function () {
+                                                $(".upload-btn").next().hide();
+                                                $(".upload-btn").click(function () {
+                                                    $(this).next().toggle();
+                                                    return false;
+                                                });
+
+                                                function initSpan(textarea) {
+                                                    let span = $('<span>').css('display', 'inline-block').appendTo('body').css('visibility', 'hidden');
+                                                    return span.text(textarea.text()).width(textarea.width()).css('font', textarea.css('font')).css('line-height', textarea.css('line-height')).css('letter-spacing', textarea.css('letter-spacing'));
+                                                }
+
+                                                function adjustTextareaHeight(textarea, span, initialHeight) {
+                                                    var text = $(textarea).val();
+                                                    text = text.replaceAll("\n", '<br/>');
+                                                    if (text.length >= 5 && text.substr(text.length - 5) == '<br/>') {
+                                                        text += '<br/>';
+                                                    }
+                                                    span.html(text);
+                                                    $(textarea).height(text
+                                                        ? span.height()
+                                                        : initialHeight);
+                                                }
+
+
+                                                let heights = [];
+                                                $('.mc-answer .mc-answers p').each(function (index, value) {
+                                                    heights.push($(value).height());
+                                                });
+                                                $('.mc-score p').each(function (index, value) {
+                                                    $($(value).height(heights[index]));
+                                                });
+
+                                                $('.show-entire-crit-report textarea').each(function () {
+                                                    let span = initSpan($(this));
+                                                    let initialHeight = $(this).height();
+
+                                                    $(this).on({
+                                                        input: function () {
+                                                            adjustTextareaHeight(this, span, initialHeight);
+                                                        },
+                                                        focus: function () {
+                                                            initSpan($(this));
+                                                        },
+                                                        keyup: function (e) {
+                                                            adjustTextareaHeight(this, span, initialHeight);
+                                                        }
+                                                    });
+                                                });
+                                            });
+                                        </script>
+
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+        <table cellspacing=0 cellpadding=0 width='100%'>
+            <tr>
+                <td class='footer-dots'>&nbsp;</td>
+            </tr>
+            <tr valign=middle class='bottom-tr'>
+                <td class='font-style'>&nbsp;&nbsp;&nbsp;&nbsp;Checker Software Systems LTD [TESTING system], 1 Arba
+                    Agudot street Hadera, Israel | RF REVN DT: 04.04.2023 - 15:31 | © 2005-2023</td>
+            </tr>
+            <tr valign=middle class='contact-td'>
+                <td colspan=3>
+                    <table id=down_logo_internal cellpadding=0 cellspacing=0 height='100%'></table>
+                </td>
+            </tr>
+        </table>
+        <td class='SecondtdWidth' width='0%'>&nbsp;</td>
+        </tr>
+        </table>
+        <script type="text/javascript">
+            function activate_form_string_boxes_ajax() {
+                $(".form-DefaultText").focus(function (srcc) {
+                    if ($(this).val() == $(this)[0].title) {
+                        $(this).removeClass("form-DefaultTextActive");
+                        $(this).val("");
+                    }
+                });
+
+                $(".form-DefaultText").blur(function () {
+                    if ($(this).val() == "") {
+                        $(this).addClass("form-DefaultTextActive");
+                        $(this).val($(this)[0].title);
+                    }
+                });
+
+                $(".form-DefaultText").blur();
+            }
+
+            addLoadEvent(activate_form_string_boxes_ajax);
+
+            $("form").submit(function () {
+                $(".form-DefaultText").each(function () {
+                    if ($(this).val() == this.title) {
+                        $(this).val("");
+                    }
+                });
+            });
+        </script>
+        <script>const buttons = document.querySelectorAll('.accordion-ai-response button');
+            const questionDivs = document.querySelectorAll('.accordion-ai-response .q');
+            const is = document.querySelectorAll('.accordion-ai-response button i');
+            const ps = document.querySelectorAll('.accordion-ai-response .q p');
+
+            let allHights = [];
+            let psHeights = [];
+            ps.forEach(p => {
+                psHeights.push(p.offsetHeight);
+            });
+
+            for (let i = 0; i < questionDivs.length; i++) {
+                allHights.push(questionDivs[i].offsetHeight);
+                questionDivs[i].style.height = `calc(${allHights[i]}px - ${psHeights[i]}px - 21px)`;
+            }
+
+            for (let i = 0; i < buttons.length; i++) {
+                buttons[i].addEventListener('click', _ => {
+                    buttons[i].classList.toggle('toggle');
+                    if (buttons[i].classList.contains('toggle')) {
+                        buttons[i].parentNode.style.height = `${allHights[i]}px`;
+                        is[i].style.transform = `rotate(45deg)`;
+                    } else {
+                        questionDivs[i].style.height = `calc(${allHights[i]}px - ${psHeights[i]}px - 21px)`;
+                        is[i].style.transform = `rotate(0deg)`;
+                    }
+                });
+            }</script>
+    </div>
+</body>
+
+</html>
